@@ -1,73 +1,198 @@
-$(document).ready(function(){
-    $(window).scroll(function(){
-        // sticky navbar on scroll script
-        if(this.scrollY > 20){
-            $('.navbar').addClass("sticky");
-        }else{
-            $('.navbar').removeClass("sticky");
-        }
-        
-        // scroll-up button show/hide script
-        if(this.scrollY > 500){
-            $('.scroll-up-btn').addClass("show");
-        }else{
-            $('.scroll-up-btn').removeClass("show");
-        }
-    });
+'use strict';
 
-    // slide-up script
-    $('.scroll-up-btn').click(function(){
-        $('html').animate({scrollTop: 0});
-        // removing smooth scroll on slide-up button click
-        $('html').css("scrollBehavior", "auto");
-    });
+// element toggle function
+const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 
-    $('.navbar .menu li a').click(function(){
-        // applying again smooth scroll on menu items click
-        $('html').css("scrollBehavior", "smooth");
-    });
+// sidebar variables
+const sidebar = document.querySelector("[data-sidebar]");
+const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
-    // toggle menu/navbar script
-    $('.menu-btn').click(function(){
-        $('.navbar .menu').toggleClass("active");
-        $('.menu-btn i').toggleClass("active");
-    });
+// sidebar toggle functionality for mobile
+sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
 
-    // typing text animation script
-    var typed = new Typed(".typing", {
-        strings: ["Software Engineer"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
 
-    var typed = new Typed(".typing-2", {
-        strings: ["Nodejs", "Javascript","Typescript"],
-        typeSpeed: 100,
-        backSpeed: 60,
-        loop: true
-    });
+// Portfolio Page
+// custom select variables
+const select = document.querySelector("[data-select]");
+const selectItems = document.querySelectorAll("[data-select-item]");
+const selectValue = document.querySelector("[data-select-value]");
+const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
-    // owl carousel script
-    $('.carousel').owlCarousel({
-        margin: 20,
-        loop: true,
-        autoplay: true,
-        autoplayTimeOut: 2000,
-        autoplayHoverPause: true,
-        responsive: {
-            0:{
-                items: 1,
-                nav: false
-            },
-            600:{
-                items: 2,
-                nav: false
-            },
-            1000:{
-                items: 3,
-                nav: false
-            }
-        }
-    });
+select.addEventListener("click", function () { elementToggleFunc(this); });
+
+
+// add event in all filter button items for large screen
+let lastClickedBtn = filterBtn[0];
+
+for (let i = 0; i < filterBtn.length; i++) {
+  filterBtn[i].addEventListener("click", function () {
+
+    let selectedValue = this.innerText.toLowerCase();
+    selectValue.innerText = this.innerText;
+    filterFunc(selectedValue);
+
+    lastClickedBtn.classList.remove("active");
+    this.classList.add("active");
+    lastClickedBtn = this;
+  });
+}
+
+// cards portfolio 
+const cardBox = document.querySelector(".project-list");
+
+let dataCards = [
+  {
+    id: 1,
+    thumb: "./images/portfolio/eaid.png",
+    title: "E-Aid",
+    category: "web development",
+    url: "https://e-aid-66j7.onrender.com/"
+  },
+  {
+    id: 2,
+    thumb: "./images/portfolio/mindconnect.png",
+    title: "MindConnect",
+    category: "web development",
+    url: "https://mindconnect.netlify.app/"
+  },
+  {
+    id: 3,
+    thumb: "./images/portfolio/noteapp1.png",
+    title: "Noteapp",
+    category: "web development",
+    url: "https://note-app-qde3.onrender.com/"
+  },
+ 
+  {
+    id: 4,
+    title: "Quickgrade",
+    thumb: "./images/portfolio/quickgrade.png",
+    category:"web development",
+    url: ""
+  },
+
+];
+
+cardBox.innerHTML = "";
+// show cards
+dataCards.map((dc) => {
+  let newCard = `
+  <div class="project-item active" data-filter-item data-category="${dc.category}" key="${dc.id}">
+    <a href="${dc.url}" target="_blank">
+      <figure class="project-img">
+        <div class="project-item-icon-box">
+          <ion-icon name="eye-outline"></ion-icon>
+        </div>
+        <img src="${dc.thumb}" alt="${dc.title}" loading="lazy">
+      </figure>
+      <h3 class="project-title">${dc.title}</h3>
+      <p class="project-category">${dc.category}</p>
+    </a>
+  </div>
+  `;
+  
+  cardBox.innerHTML += newCard;
+  
+  // filter variables
+  const filterItems = document.querySelectorAll("[data-filter-item]");
+  
+  const filterFunc = function (selectedValue) {
+  for (let i = 0; i < filterItems.length; i++) {
+    if (selectedValue === "all") {
+      filterItems[i].classList.add("active");
+    } else if (selectedValue === filterItems[i].dataset.category) {
+      filterItems[i].classList.add("active");
+    } else {
+      filterItems[i].classList.remove("active");
+    }
+
+  }
+};
+
+  // add event in all select items
+  for (let i = 0; i < selectItems.length; i++) {
+  selectItems[i].addEventListener("click", function () {
+
+    let selectedValue = this.innerText.toLowerCase();
+    selectValue.innerText = this.innerText;
+    elementToggleFunc(select);
+    
+    filterFunc(selectedValue);
+
+  });
+}
+});
+
+
+
+
+// submit reset form (Contact Page)
+const btnSub = document.querySelector(".form-btn"),
+      form = document.querySelector(".form");
+
+const nameVal = document.getElementById("name"),
+      emailVal = document.getElementById("email"),
+      message = document.getElementById("message");
+
+btnSub.addEventListener('click', function handleClick(event) {
+  // 👇️ if you are submitting a form (prevents page reload)
+  event.preventDefault();
+  
+  if (!nameVal.value || !emailVal.value || !message.value) {
+    alert("Please complete the fields that have not been filled in!")
+    return false;
+  }
+  
+  if (nameVal && emailVal &&message) {
+    form.submit();
+  }
+  // 👇️ clear input field
+  form.reset();
+});
+
+
+// page navigation variables
+const navigationLinks = document.querySelectorAll("[data-nav-link]");
+const pages = document.querySelectorAll("[data-page]");
+
+// add event to all nav link
+for (let i = 0; i < navigationLinks.length; i++) {
+  navigationLinks[i].addEventListener("click", function () {
+
+    for (let i = 0; i < pages.length; i++) {
+      if (this.innerHTML.toLowerCase() === pages[i].dataset.page) {
+        pages[i].classList.add("active");
+        navigationLinks[i].classList.add("active");
+        window.scrollTo(0, 0);
+      } else {
+        pages[i].classList.remove("active");
+        navigationLinks[i].classList.remove("active");
+      }
+    }
+
+  });
+}
+
+
+/*=============== SCROLL REVEAL =============== */
+ScrollReveal({
+  reset: true,
+  origin: 'top',
+  distance: '60px',
+  duration: 2500,
+  delay: 400
+});
+
+ScrollReveal().reveal('.contact-item', {
+  delay: 600
+});
+
+ScrollReveal().reveal('.abt, .porto, .tleft, .skill-progress-fill', {
+  origin: 'left'
+});
+ScrollReveal().reveal('.tright', {
+  origin: 'right'
+});
+ScrollReveal().reveal('.service-item, .contact-item', {
+  interval: 100,
 });
