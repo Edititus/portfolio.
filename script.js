@@ -143,7 +143,7 @@ btnSub.addEventListener('click', function handleClick(event) {
     return false;
   }
   
-  if (nameVal && emailVal &&message) {
+  if (nameVal && emailVal && message) {
     form.submit();
   }
   // 👇️ clear input field
