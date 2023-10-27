@@ -43,34 +43,32 @@ const cardBox = document.querySelector(".project-list");
 let dataCards = [
   {
     id: 1,
-    thumb: "./images/portfolio/eaid.png",
-    title: "E-Aid",
-    category: "web development",
-    url: "https://e-aid-66j7.onrender.com/"
+    thumb: './images/portfolio/docuhelp.ai.png',
+    title: 'Docuhelp.ai',
+    category: 'web development',
+    url: 'https://docuhelp.ai/',
   },
   {
     id: 2,
-    thumb: "./images/portfolio/mindconnect.png",
-    title: "MindConnect",
-    category: "web development",
-    url: "https://mindconnect.netlify.app/"
+    thumb: './images/portfolio/3d7tech.png',
+    title: '3d7 tech',
+    category: 'web development',
+    url: 'https://uat.3d7tech.com/',
   },
   {
     id: 3,
-    thumb: "./images/portfolio/noteapp1.png",
-    title: "Noteapp",
-    category: "web development",
-    url: "https://note-app-qde3.onrender.com/"
+    thumb: './images/portfolio/mindconnect.png',
+    title: 'MindConnect',
+    category: 'web development',
+    url: 'https://mindconnect.netlify.app/',
   },
- 
   {
     id: 4,
-    title: "Quickgrade",
-    thumb: "./images/portfolio/quickgrade.png",
-    category:"web development",
-    url: ""
+    thumb: './images/portfolio/noteapp1.png',
+    title: 'Noteapp',
+    category: 'web development',
+    url: 'https://note-app-qde3.onrender.com/',
   },
-
 ];
 
 cardBox.innerHTML = "";
