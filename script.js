@@ -53,7 +53,7 @@ let dataCards = [
     thumb: './images/portfolio/3d7tech.png',
     title: '3d7 tech',
     category: 'web development',
-    url: 'https://uat.3d7tech.com/',
+    url: 'https://www.3d7tech.com/',
   },
   {
     id: 3,
