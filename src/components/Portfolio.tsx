@@ -101,12 +101,11 @@ const dataCards: ProjectCard[] = [
 const categories: string[] = ["Others", "AI-Powered"];
 
 const Portfolio: React.FC = () => {
-  const [selectedCategory, setSelectedCategory] =
-    useState<string>("AI-Powered");
+  const [selectedCategory, setSelectedCategory] = useState<string>("Others");
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const filteredCards =
-    selectedCategory === "AI-Powered"
+    selectedCategory === "Others"
       ? dataCards.filter((card) => card.category === selectedCategory)
       : dataCards.filter((card) => card.category === selectedCategory);
 
