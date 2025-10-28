@@ -9,6 +9,6 @@
 
 # Responsive Personal Website
 
-fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+fully responsive personal portfolio website, responsive for all devices, built using React,typescript.
 
 https://ediomo-titus.netlify.app
