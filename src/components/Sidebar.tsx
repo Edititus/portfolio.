@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ediomoImage from "../assets/Ediomo.jpg";
 
 interface SocialLink {
   name: string;
@@ -99,7 +100,7 @@ const Sidebar: React.FC = () => {
           }}
         >
           <img
-            src='/images/Ediomo.jpg'
+            src={ediomoImage}
             alt='Ediomo Titus'
             style={{
               width: "120px",

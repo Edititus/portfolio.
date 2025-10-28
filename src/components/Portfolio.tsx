@@ -1,5 +1,11 @@
 import React, { useState } from "react";
-
+import glacrImage from "../assets/portfolio/glacr.ai.png";
+import ediomoImage from "./assets/images/Ediomo.jpg";
+import docuhelpImage from "../assets/portfolio/docuhelp.ai.png";
+import MindConnectImage from "../assets/portfolio/mindconnect.png";
+import fipayImage from "../assets/portfolio/fipay.io.png";
+import billTrackerImage from "../assets/portfolio/billTracker.png";
+import techImage from "../assets/portfolio/3d7tech.png";
 interface ProjectCard {
   id: number;
   thumb: string;
@@ -13,7 +19,7 @@ interface ProjectCard {
 const dataCards: ProjectCard[] = [
   {
     id: 1,
-    thumb: "/images/portfolio/docuhelp.ai.png",
+    thumb: docuhelpImage,
     title: "Docuhelp.ai",
     category: "AI-Powered",
     url: "https://docuhelp.ai/",
@@ -22,7 +28,7 @@ const dataCards: ProjectCard[] = [
   },
   {
     id: 4,
-    thumb: "/images/portfolio/fipay.io.png",
+    thumb: fipayImage,
     title: "Fipay",
     category: "Others",
     url: "https://www.fipay.io/",
@@ -32,7 +38,7 @@ const dataCards: ProjectCard[] = [
   },
   {
     id: 5,
-    thumb: "/images/portfolio/glacr.ai.png",
+    thumb: glacrImage,
     title: "Glacr",
     category: "AI-Powered",
     url: "https://www.glacr.ai/",
@@ -48,7 +54,7 @@ const dataCards: ProjectCard[] = [
   },
   {
     id: 6,
-    thumb: "/images/portfolio/billTracker.png",
+    thumb: billTrackerImage,
     title: "Bill Tracker",
     category: "Others",
     url: "https://billtracker.naltf.gov.ng/",
@@ -58,7 +64,7 @@ const dataCards: ProjectCard[] = [
   },
   {
     id: 2,
-    thumb: "/images/portfolio/3d7tech.png",
+    thumb: techImage,
     title: "3d7 Tech",
     category: "Others",
     url: "https://www.3d7tech.com/",
@@ -67,7 +73,7 @@ const dataCards: ProjectCard[] = [
   },
   {
     id: 3,
-    thumb: "/images/portfolio/mindconnect.png",
+    thumb: MindConnectImage,
     title: "MindConnect",
     category: "Others",
     url: "https://mindconnect.netlify.app/",
