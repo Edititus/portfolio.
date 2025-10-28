@@ -18,15 +18,6 @@ interface ProjectCard {
 
 const dataCards: ProjectCard[] = [
   {
-    id: 1,
-    thumb: docuhelpImage,
-    title: "Docuhelp.ai",
-    category: "AI-Powered",
-    url: "https://docuhelp.ai/",
-    description: "AI-powered document analysis and assistance platform",
-    technologies: ["React", "Node.js", "MongoDB", "OpenAI API"],
-  },
-  {
     id: 4,
     thumb: fipayImage,
     title: "Fipay",
@@ -35,6 +26,31 @@ const dataCards: ProjectCard[] = [
     description:
       "Fipay is a fintech platform designed to provide payment solutions and transaction management with a focus on user experience and scalability",
     technologies: ["React", "TypeScript", "Graphql", "Tailwind CSS"],
+  },
+  {
+    id: 5,
+    thumb: glacrImage,
+    title: "Glacr",
+    category: "AI-Powered",
+    url: "https://www.glacr.ai/",
+    description:
+      "Glacr is a web platform designed to facilitate onboarding and career guidance. It combines AI-powered chat with dynamic user flows to provide personalized onboarding experiences for users.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "langchain",
+      "Postgres",
+      "Tailwind CSS",
+    ],
+  },
+  {
+    id: 1,
+    thumb: docuhelpImage,
+    title: "Docuhelp.ai",
+    category: "AI-Powered",
+    url: "https://docuhelp.ai/",
+    description: "AI-powered document analysis and assistance platform",
+    technologies: ["React", "Node.js", "MongoDB", "OpenAI API"],
   },
   {
     id: 5,
@@ -82,7 +98,7 @@ const dataCards: ProjectCard[] = [
   },
 ];
 
-const categories: string[] = ["AI-Powered", "Others"];
+const categories: string[] = ["Others", "AI-Powered"];
 
 const Portfolio: React.FC = () => {
   const [selectedCategory, setSelectedCategory] =
