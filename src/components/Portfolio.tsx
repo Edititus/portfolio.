@@ -52,22 +52,7 @@ const dataCards: ProjectCard[] = [
     description: "AI-powered document analysis and assistance platform",
     technologies: ["React", "Node.js", "MongoDB", "OpenAI API"],
   },
-  {
-    id: 5,
-    thumb: glacrImage,
-    title: "Glacr",
-    category: "AI-Powered",
-    url: "https://www.glacr.ai/",
-    description:
-      "Glacr is a web platform designed to facilitate onboarding and career guidance. It combines AI-powered chat with dynamic user flows to provide personalized onboarding experiences for users.",
-    technologies: [
-      "React",
-      "TypeScript",
-      "langchain",
-      "Postgres",
-      "Tailwind CSS",
-    ],
-  },
+
   {
     id: 6,
     thumb: billTrackerImage,
