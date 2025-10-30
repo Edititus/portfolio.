@@ -32,7 +32,7 @@ const dataCards: ProjectCard[] = [
     thumb: glacrImage,
     title: "Glacr",
     category: "AI-Powered",
-    url: "https://www.glacr.ai/",
+    url: "https://glacr.ai/",
     description:
       "Glacr is a web platform designed to facilitate onboarding and career guidance. It combines AI-powered chat with dynamic user flows to provide personalized onboarding experiences for users.",
     technologies: [
